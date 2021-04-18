@@ -34,7 +34,8 @@ void getGPA(struct Student *record, int size)
 				Total_Units += (record + k)->course_data[j].unit;
 			}
 			GPA = Total_Credit_Honors/Total_Units;
-			printf("%s with ID number %d has a GPA of %2.3f\n", (record + k)->name, (record + k)->id, GPA);
+			printf("%s with ID number %d has a GPA of %2.3f", (record + k)->name, (record + k)->id, GPA);
+			if (k < size - 1) printf("\n");
 		}
 }
 
