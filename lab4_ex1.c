@@ -17,7 +17,7 @@ struct Student
 	char degree[80];
 	struct Course course_data[TOTAL_COURSE];
 	float GPA;
-};
+}; 
 
 struct Student *record;
 
@@ -72,7 +72,7 @@ int main(void)
         scanf("%d", &N);
     } while (N <= 0 || N > 20000);
     
-    Student *record;
+    struct Student *record;
 	record = (Student *)malloc(N * sizeof(Student)); //dynamic allocation of memory
 	getRecord(record,N);
 	getGPA(record,N);
