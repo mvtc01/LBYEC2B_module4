@@ -10,18 +10,18 @@ struct Course
 	float grade;
 };
 
-struct Student 
+typedef struct student 
 {
 	int id;
 	char name[80];
 	char degree[80];
 	struct Course course_data[TOTAL_COURSE];
 	float GPA;
-}; 
+}Student; 
 
-struct Student *record;
+Student *record;
 
-void getGPA(struct Student *record, int size)
+void getGPA(Student *record, int size)
 {
 	for (int k = 0; k < size; k++)
 		{
@@ -39,7 +39,7 @@ void getGPA(struct Student *record, int size)
 		}
 }
 
-void getRecord(struct Student *record, int size)
+void getRecord(Student *record, int size)
 {
 	int i, j, k;
 	for (i = 0; i < size; i++)
@@ -72,7 +72,7 @@ int main(void)
         scanf("%d", &N);
     } while (N <= 0 || N > 20000);
     
-    struct Student *record;
+    Student *record;
 	record = (Student *)malloc(N * sizeof(Student)); //dynamic allocation of memory
 	getRecord(record,N);
 	getGPA(record,N);
