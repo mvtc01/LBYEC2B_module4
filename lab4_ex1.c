@@ -41,7 +41,7 @@ void getGPA(Student *record, int size)
 
 void getRecord(Student *record, int size)
 {
-	int i, j, k;
+	int i, j;
 	for (i = 0; i < size; i++)
 	{
 		printf("student name: ");
@@ -74,7 +74,7 @@ int main(void)
     
     Student *record;
 	record = (Student *)malloc(N * sizeof(Student)); //dynamic allocation of memory
-	getRecord(record,N);
-	getGPA(record,N);
+	getRecord(record,N);	//gets the data from the user
+	getGPA(record,N);	//computes for the GPA
 	return 0;
 }
